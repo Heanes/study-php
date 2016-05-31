@@ -1,0 +1,15 @@
+#后缀名屏蔽显示Forbidden
+<FilesMatch "\.(bak|inc|lib|sh|tpl|lbi|dwt)$">
+    order deny,allow
+    deny from all
+</FilesMatch>
+Options -Indexes
+RewriteEngine On
+#RewriteBase /
+#rewriteBase /member
+
+#RewriteRule 
+RewriteRule ^([a-zA-Z]+)-([0-9]+)\.html$ index.php?category=$1&id=$2
+RewriteRule ^([a-zA-Z]+)$ index.php?category=$1
+#跳转至错误页面
+#RewriteRule (.*).php$ 404.html

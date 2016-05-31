@@ -1,0 +1,1 @@
+<?php	if(!class_exists('Product')) require 'product.model.php';		if(Product::save($_POST)){		$result = array(			'status'		=> 1,			'msg'			=> '保存产品成功！',		);		echo json_encode($result);	}else {		$result = array(			'status' 		=> 0,			'msg'			=> '保存产品失败！'.mysql_error($db),		);		echo json_encode($result);	}	exit;//End_php

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 让IE8在新模式下渲染（禁止兼容模式） -->
+<meta name="renderer" content="webkit"><!-- 让360等多核模式浏览器默认用极速模式打开 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes,minimal-ui" />
+
+<meta name="author" content="Heanes heanes.com email(heanes@163.com)">
+<meta name="keywords" content="软件,商务,HTML,tutorials,source codes">
+<meta name="description" content="描述">
+<title>ajax获取api数据并填充测试</title>
+<script type="text/javascript" src="http://cdn.heanes.com/js/jquery/2.1.3/jquery-2.1.3.min.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<!-- S 头部 S -->
+		<div class="header">
+			
+		</div>
+		<!-- E 头部 E-->
+		<!-- S 主要内容 S -->
+		<div class="main">
+			<div class="main-content">
+				<script type="text/template" id="template">
+				<div class='message' id='message'>
+					第 {{article_id}} 位{{article_category_id}}用户: {{article_title}}<span>{{content}}</span>
+					<p>
+						{{article_a_href}}{{}}
+					</p>
+				</div>
+				</script>
+				<script>
+					(function($) {
+						var template = $('#template').html();
+						function get_data() {
+							$.ajax({
+								url : 'api.php',
+								dataType : 'json',
+								success : function(data) {
+									for (var i = 0; i < data.length; ++i) {
+										var tmp = data[i];
+										//console.log(tmp);
+										$('.main-content').append(tmp.article_title);
+										// 循环输出，用变量替换template中的{{变量}}
+										template = template.replace(/{{([\s\S]*?)}}/gi, "$1"); 
+										console.log(template);
+									}
+									$('.main-content').append(template);
+								}
+							});
+						}
+						get_data();
+						var strM = "javascript is a good script language";
+						//javascript is fun. it is a good script language
+						$('.main-content').append(strM.replace(/(javascript)\s*(is)/g,"$1 $2 fun. it $2"));
+					})(jQuery);
+				</script>
+			</div>
+		</div>
+		<!-- E 主要内容 E -->
+		<!-- S 脚部 S -->
+		<div class="footer">
+			
+		</div>
+		<!-- E 脚部 E -->
+	</div>
+	<cite>
+		<!-- S js S -->
+		
+		<!-- E js E -->
+	</cite>
+</body>
+</html>
