@@ -4,12 +4,28 @@
  * @author fanggang
  * @time 2015-11-22 12:12:46
  */
-/**************************************首页页面*******************************/
+.container .title{
+    text-align:center;
+    padding:30px 0;
+}
+.container .title h1{
+    font-size:18px;
+}
+.calculate-pregnancy-date{
+    width:400px;
+    margin:0 auto;
+}
 .select-constellation{
     background-color:#fff;
     border-radius:4px;
     padding:20px;
     margin-bottom:20px;
+}
+.select-constellation .select-constellation-form{}
+.select-constellation .select-constellation-form .form-group{}
+.select-constellation .select-constellation-form .form-group .form-label{
+    color:#666;
+    padding:10px 0 10px 4px;
 }
 .form-normal-input{
     display: block;
@@ -36,4 +52,22 @@
     background-color:#fff;
     border-radius:4px;
     padding:20px;
+}
+.calculate-result-block .result-content{
+
+}
+.calculate-result-block .result-content .result-row{
+    margin:10px 0;
+    height:40px;
+    line-height:40px;
+    padding:0 10px;
+}
+.calculate-result-block .result-content .result-row .row-title{
+    color:#666;
+}
+.calculate-result-block .result-content .result-row.resultDateStart{
+    background-color:#dff0d8;
+}
+.calculate-result-block .result-content .result-row.resultDateEnd{
+    background-color:#d9edf7;
 }

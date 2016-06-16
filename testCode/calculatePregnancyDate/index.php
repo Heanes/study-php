@@ -132,10 +132,10 @@ if(isset($_GET['act']) && $_GET['act'] == 'calc'){
         <!-- 主体内容 -->
         <div class="main-content main-wrap clearfix">
             <!-- 中心区域 -->
-            <div class="center-block center-wrap float-block">
+            <div class="center-block center-wrap">
                 <div class="container">
                     <div class="title">
-                        <h1 style="display:none">根据宝宝出生不同星座计算怀孕合适日期</h1>
+                        <h1>根据宝宝出生不同星座计算怀孕合适日期</h1>
                     </div>
                     <div class="content">
                         <div class="calculate-pregnancy-date">
@@ -172,13 +172,13 @@ if(isset($_GET['act']) && $_GET['act'] == 'calc'){
                                     <h2>计算结果</h2>
                                 </div>
                                 <div class="result-content">
-                                    <div class="result-row">
+                                    <div class="result-row resultDateStart">
                                         <span class="row-title">最早日期</span>
-                                        <span class="row-value" id="earliestDate">11-18</span>
+                                        <span class="row-value" id="earliestDate"></span>
                                     </div>
-                                    <div class="result-row">
+                                    <div class="result-row resultDateEnd">
                                         <span class="row-title">最晚日期</span>
-                                        <span class="row-value" id="latestDate">01-08</span>
+                                        <span class="row-value" id="latestDate"></span>
                                     </div>
                                 </div>
                             </div>
