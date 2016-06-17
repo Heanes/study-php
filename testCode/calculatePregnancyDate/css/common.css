@@ -16,7 +16,7 @@
 .none{display:none}
 .relative{position:relative}
 .main-wrap{
-    width:1200px
+    max-width:1200px
 }
 .left-block{display:none;}
 /* 通用命名下的样式 */

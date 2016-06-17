@@ -72,12 +72,12 @@ $constellationDateLib = [
     ],
 ];
 
-$current = [
+$currentTimeInfo = [
     'year' => date('Y'),
 ];
 $yearList = [];
 for($i = 0; $i < 48; $i++){
-    $yearTemp = $current['year'] + $i + 1;
+    $yearTemp = $currentTimeInfo['year'] + $i + 1;
     $remainder = ($yearTemp + 8) % 12;
     $yearList[] = [
         'year' => $yearTemp,
@@ -105,6 +105,7 @@ if(isset($_GET['act']) && $_GET['act'] == 'calc'){
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
@@ -141,28 +142,29 @@ if(isset($_GET['act']) && $_GET['act'] == 'calc'){
                         <div class="calculate-pregnancy-date">
                             <div class="select-constellation">
                                 <form class="select-constellation-form">
-                                    <div class="form-group">
+                                    <div class="form-group inline-group">
                                         <div class="form-label">
                                             <label for="selectConstellationYear">请选择年份</label>
                                         </div>
                                         <div class="form-input">
-                                            <select class="form-normal-input select select-constellation" id="selectConstellationYear">
+                                            <select class="form-normal-input select" id="selectConstellationYear">
                                                 <?php foreach ($yearList as $year){?>
                                                     <option value="<?php echo $year['year'];?>"><?php echo $year['year'].' '.$year['animal'];?></option>
                                                 <?php }?>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group inline-group">
                                         <div class="form-label">
                                             <label for="selectConstellationDate">请选择星座</label>
                                         </div>
-                                        <div class="form-input">
+                                        <div class="form-input relative">
                                             <select class="form-normal-input select select-constellation" id="selectConstellationDate">
                                                 <?php foreach ($constellationDateLib as $index => $item) {?>
                                                     <option class="<?php echo $index;?>" value="<?php echo $index;?>" <?php if($index == '08chunv'){?>selected<?php }?>><?php echo $item['name'].' '.$item['dateStart'].'/'.$item['dateEnd'];?></option>
                                                 <?php }?>
                                             </select>
+                                            <span id="selectConstellationIcon"></span>
                                         </div>
                                     </div>
                                 </form>
@@ -208,6 +210,8 @@ if(isset($_GET['act']) && $_GET['act'] == 'calc'){
                     alert('出现问题：' + result.message);
                 }
             });
+            var selectConstellationIconClass = selectConstellation.substring(2, selectConstellation.length);
+            $('#selectConstellationIcon').attr('class', '').addClass(selectConstellationIconClass);
         });
         $('#selectConstellationDate').trigger('change');
     });

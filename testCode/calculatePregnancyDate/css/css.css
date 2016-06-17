@@ -4,18 +4,29 @@
  * @author fanggang
  * @time 2015-11-22 12:12:46
  */
-.container .title{
-    text-align:center;
-    padding:30px 0;
-}
-.container .title h1{
-    font-size:18px;
-}
-.calculate-pregnancy-date{
-    width:400px;
+.container{
+    max-width:800px;
     margin:0 auto;
 }
-.select-constellation{
+.container .title{
+    text-align:center;
+    padding:20px;
+    max-width:800px;
+    margin:0 auto;
+}
+.container .title h1{
+    font-size:16px;
+    margin:26px 0 20px 0;
+    color:#479ac1;
+    background:#f1f7fd;
+    border:1px solid #d2e8fa;
+    padding:10px;
+}
+.calculate-pregnancy-date{
+    margin:0 auto;
+    padding:20px;
+}
+.calculate-pregnancy-date > .select-constellation{
     background-color:#fff;
     border-radius:4px;
     padding:20px;
@@ -23,11 +34,15 @@
 }
 .select-constellation .select-constellation-form{}
 .select-constellation .select-constellation-form .form-group{}
+.select-constellation .select-constellation-form .form-group.inline-group{
+    display:inline-block;
+    margin-right:14px;
+}
 .select-constellation .select-constellation-form .form-group .form-label{
     color:#666;
     padding:10px 0 10px 4px;
 }
-.form-normal-input{
+.select-constellation .select-constellation-form .form-group .form-normal-input{
     display: block;
     width: 100%;
     height: 34px;
@@ -44,8 +59,51 @@
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
-.select-constellation option.shuipin{
-    background:url("../image/constellationIcon/01shuiping.gif");
+.select-constellation .select-constellation-form .form-group .form-normal-input.select-constellation{
+    padding-left:40px;
+}
+#selectConstellationIcon{
+    display:inline-block;
+    width:20px;height:20px;
+    position:absolute;
+    left:10px;
+    top:8px;
+}
+#selectConstellationIcon.shuipin{
+    background:url("../image/constellation/icon/01shuiping.gif");
+}
+#selectConstellationIcon.shuangyu{
+    background:url("../image/constellation/icon/02shuangyu.gif");
+}
+#selectConstellationIcon.baiyang{
+    background:url("../image/constellation/icon/03baiyang.gif");
+}
+#selectConstellationIcon.jinniu{
+    background:url("../image/constellation/icon/04jinniu.gif");
+}
+#selectConstellationIcon.shuangzi{
+    background:url("../image/constellation/icon/05shuangzi.gif");
+}
+#selectConstellationIcon.juxie{
+    background:url("../image/constellation/icon/06juxie.gif");
+}
+#selectConstellationIcon.shizi{
+    background:url("../image/constellation/icon/07shizi.gif");
+}
+#selectConstellationIcon.chunv{
+    background:url("../image/constellation/icon/08chunv.gif");
+}
+#selectConstellationIcon.tiancheng{
+    background:url("../image/constellation/icon/09tiancheng.gif");
+}
+#selectConstellationIcon.tianxie{
+    background:url("../image/constellation/icon/10tianxie.gif");
+}
+#selectConstellationIcon.sheshou{
+    background:url("../image/constellation/icon/11sheshou.gif");
+}
+#selectConstellationIcon.mojie{
+    background:url("../image/constellation/icon/12mojie.gif");
 }
 
 .calculate-result-block{
