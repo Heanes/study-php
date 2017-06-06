@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('PRC');
 /**
  * @doc 根据宝宝出生不同星座计算怀孕合适日期
  * @author Heanes fang <heanes@163.com>
